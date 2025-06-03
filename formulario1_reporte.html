@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PLAN OPERATIVO ANUAL - FORMULARIO 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 12px; margin: 25px; background: #fff; }
+        .header-row { display: flex; align-items: center; margin-bottom: 10px; }
+        .logo { height: 80px; margin-right: 10px; }
+        .org-title { flex: 1; text-align: center; }
+        .right-logo { height: 80px; margin-left: 10px; }
+        h2 { font-size: 1.2em; margin: 0; }
+        .block { margin-bottom: 8px; }
+        .info-table { width: 100%; border: none; margin-bottom: 10px; }
+        .info-table td { padding: 2px 8px; }
+        .cuadro { width: 100%; border-collapse: collapse; }
+        .cuadro th, .cuadro td { border: 1px solid #222; padding: 2px 4px; font-size: 11px; }
+        .cuadro th { background: #e0e0e0; text-align: center; }
+        .cuadro td { vertical-align: top; }
+        .readonly { background: #f9f9f9; color: #555; }
+        .editable { background: #eef; }
+        .section-label { font-weight: bold; font-size: 1.1em; }
+        .legend { font-size: 10px; color: #444; margin-top: 6px; }
+        .text-area-edit { width: 100%; min-height: 30px; border: 1px solid #ccc; background: #eef; }
+        .text-area-read { width: 100%; min-height: 30px; border: 1px solid #eee; background: #fafafa; }
+    </style>
+</head>
+<body>
+    <!-- Encabezados y logos -->
+    <div class="header-row">
+        <img src="/assets/img/bolivia_izq.png" class="logo" alt="Escudo Bolivia">
+        <div class="org-title">
+            <img src="/assets/img/senape_logo.png" style="height: 30px;" alt="SENAPE"><br>
+            <span>MINISTERIO DE ECONOMÍA Y FINANZAS PÚBLICAS<br>VICEMINISTERIO DE TESORO Y CRÉDITO PÚBLICO</span>
+            <h2>PLAN OPERATIVO ANUAL<br>ACCIONES A CORTO PLAZO<br><u>FORMULARIO Nro. 1</u></h2>
+        </div>
+        <img src="/assets/img/bolivia_der.png" class="right-logo" alt="Escudo Estado">
+    </div>
+    <!-- Área organizacional y gestión -->
+    <table class="info-table">
+        <tr>
+            <td class="section-label">ÁREA ORGANIZACIONAL:</td>
+            <td><span id="area_org">SERVICIO NACIONAL DE PATRIMONIO DEL ESTADO</span></td>
+            <td class="section-label">GESTIÓN DEL POA:</td>
+            <td><span id="gestion_poa">2025</span></td>
+            <td class="section-label">SIGLA:</td>
+            <td><span id="sigla">SENAPE</span></td>
+        </tr>
+    </table>
+    <!-- Visión, misión, Eje, Meta, etc. -->
+    <div class="block">
+        <div class="section-label">Visión:</div>
+        <div class="readonly" id="vision">
+            Institución fiable, transparente, oportuna y eficiente, reconocida como la autoridad en el registro de los bienes de las entidades públicas, impulsará el saneamiento técnico y legal de los bienes públicos, mediante nuevas tecnologías de información y con recursos humanos altamente calificados.
+        </div>
+    </div>
+    <div class="block">
+        <div class="section-label">Misión:</div>
+        <div class="readonly" id="mision">
+            Efectuar el registro de los bienes del Estado, conforme a Reglamento y promover el saneamiento y la valoración de los mismos, y disponer de los bienes recibidos de otras instituciones, administrar el Activo Exigible de las entidades disueltas o en proceso de liquidación, y concluir los procesos de liquidación de ex entidades estatales y entes gestores de la seguridad social.
+        </div>
+    </div>
+    <div class="block">
+        <div class="section-label">Eje Estratégico:</div>
+        <div class="readonly" id="eje">
+            Eje 1 Reconstruyendo la economía, retornando la estabilidad macroeconómica y social.
+        </div>
+    </div>
+    <div class="block">
+        <div class="section-label">Meta:</div>
+        <div class="readonly" id="meta">
+            Reconstruir la economía reorientando al modelo económico social productivo, con estabilidad macroeconómica.
+        </div>
+    </div>
+    <div class="block">
+        <div class="section-label">Resultado:</div>
+        <div class="readonly" id="resultado">
+            Sostener la estabilidad macroeconómica y el crecimiento.
+        </div>
+    </div>
+    <div class="block">
+        <div class="section-label">Acción:</div>
+        <div class="readonly" id="accion">
+            Mantener una política fiscal soberana y responsable, y continuar con la suscripción del "Acuerdo de Ejecución del Programa Fiscal-Financiero".
+        </div>
+    </div>
+    <div class="block">
+        <div class="section-label">Acción Estratégica Ministerial AEM 1:</div>
+        <div class="readonly" id="accion_estrategica">
+            Elaborar y suscribir el "Acuerdo de Ejecución del Programa Fiscal Financiero".
+        </div>
+    </div>
+    <div class="block">
+        <div class="section-label">Objetivo Estratégico SENAPE 2021-2025:</div>
+        <div class="readonly" id="objetivo_estrategico">
+            Realizar acciones institucionales para que los POAs proporcionen información confiable y oportuna...
+        </div>
+    </div>
+    <!-- Cuadro de acciones y metas -->
+    <table class="cuadro" id="tabla_formulario1">
+        <thead>
+            <tr>
+                <th rowspan="2">Cód. PEI</th>
+                <th rowspan="2">Denominación</th>
+                <th rowspan="2">Cód. POA</th>
+                <th rowspan="2">Objetivo Estratégico</th>
+                <th rowspan="2" style="background: #d3e6f5;">Acción de Mediano Plazo</th>
+                <th rowspan="2">Acción de Corto Plazo</th>
+                <th rowspan="2">Producto</th>
+                <th rowspan="2">Descripción del Indicador</th>
+                <th rowspan="2">Unidad de medida</th>
+                <th rowspan="2">Fórmula</th>
+                <th rowspan="2">Meta 2021-2025</th>
+                <th colspan="5">Programación de metas</th>
+            </tr>
+            <tr>
+                <th>2021<br>Ejec.</th>
+                <th>2022<br>Ejec.</th>
+                <th>2023<br>Ejec.</th>
+                <th>2024<br>Ejec.</th>
+                <th>2025<br>Prog.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Filas generadas dinámicamente -->
+            <!-- Ejemplo de fila: -->
+            <!--
+            <tr>
+                <td class="readonly">AEM1</td>
+                <td class="readonly">Registro y Promoción</td>
+                <td class="readonly">POA-01</td>
+                <td class="readonly">...objetivo...</td>
+                <td class="readonly">...acción mediano plazo...</td>
+                <td class="editable"><textarea class="text-area-edit" name="accion_corto_plazo_1">...</textarea></td>
+                <td class="editable"><textarea class="text-area-edit" name="producto_1">...</textarea></td>
+                <td class="readonly">Cumplimiento de POA</td>
+                <td class="readonly">Porcentaje</td>
+                <td class="readonly">Promedio de tareas</td>
+                <td class="readonly">100</td>
+                <td class="readonly">99</td>
+                <td class="readonly">100</td>
+                <td class="readonly">95</td>
+                <td class="editable"><input type="number" name="meta_2025_1" value="95"></td>
+            </tr>
+            -->
+        </tbody>
+    </table>
+    <div class="legend">
+        *Ejemplo: Solo "Acción de Corto Plazo", "Producto" y la meta 2025 son editables en Formulación/Seguimiento; el resto es inamovible por ciclo PEI.<br>
+        *Las celdas editables aparecen solo si el usuario es autorizado y la etapa corresponde.
+    </div>
+</body>
+</html>

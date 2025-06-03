@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; margin: 2em; background: #f8f9fa; }
+h1, h2 { color: #1763a6; }
+header { border-bottom: 2px solid #eee; margin-bottom: 1em; }
+nav a { margin-right: 1em; text-decoration: none; color: #1763a6; font-weight: bold; }
+nav a:hover { text-decoration: underline; }
+label { font-weight: bold; }
+input, select, textarea { width: 100%; margin-bottom: 1em; }
+a.btn { background: #1763a6; color: #fff; padding: 0.5em 1em; border-radius: 4px; text-decoration: none; }
+a.btn:hover { background: #0e3e69; }
+table.display { width: 100%; border-collapse: collapse; margin-top: 2em; }
+table.display th, table.display td { border: 1px solid #ddd; padding: 0.5em; }
+footer { margin-top: 3em; color: #888; text-align: center; }

@@ -1,0 +1,38 @@
+# Estructura inicial del sistema (CodeIgniter 4 + frontend básico + módulo de Indicadores)
+
+.
+├── app/
+│   ├── Config/
+│   │   └── Routes.php
+│   ├── Controllers/
+│   │   └── Indicadores.php
+│   ├── Models/
+│   │   └── IndicadorModel.php
+│   ├── Views/
+│   │   ├── layouts/
+│   │   │   ├── header.php
+│   │   │   └── footer.php
+│   │   └── indicadores/
+│   │       ├── index.php
+│   │       ├── crear.php
+│   │       └── ver.php
+│   └── Database/
+│       ├── Migrations/
+│       │   └── 2025-06-03-000001_create_indicadores.php
+│       └── Seeds/
+│           └── IndicadoresSeeder.php
+├── public/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── app.css
+│   │   ├── js/
+│   │   │   └── app.js
+│   │   └── libs/
+│   │       ├── jquery.min.js
+│   │       ├── jquery-ui.min.js
+│   │       └── datatables.min.js
+│   └── index.php
+├── sql/
+│   └── indicadores.sql
+├── .env.example
+├── README.md
