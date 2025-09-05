@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Solon - Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --color-primario: #4A90E2;
+      --color-secundario: #F5A623;
+      --color-fondo-principal: #FFFFFF;
+      --color-fondo-secundario: #F7F8FA;
+      --color-texto-principal: #333333;
+      --color-texto-secundario: #777777;
+      --color-borde-suave: #E0E0E0;
+      --color-estado-progreso: #7ED321;
+      --color-estado-alerta: #D0021B;
+      --fuente-base: 'Inter', sans-serif;
+      --peso-regular: 400;
+      --peso-medio: 500;
+      --peso-negrita: 700;
+      --titulo-principal: 24px;
+      --titulo-seccion: 18px;
+      --texto-base: 14px;
+      --texto-pequeño: 12px;
+      --padding-contenedor: 24px;
+      --margen-elementos: 16px;
+      --radio-borde: 8px;
+      --sombra-suave: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    body {
+      background: var(--color-fondo-principal);
+      color: var(--color-texto-principal);
+      font-family: var(--fuente-base);
+      margin: 0;
+    }
+    .topbar {
+      background: var(--color-fondo-secundario);
+      padding: var(--padding-contenedor);
+      font-size: var(--titulo-principal);
+      font-weight: var(--peso-negrita);
+      border-bottom: 1px solid var(--color-borde-suave);
+      box-shadow: var(--sombra-suave);
+    }
+    .layout {
+      display: flex;
+      flex-direction: row;
+      margin: var(--padding-contenedor);
+      gap: var(--margen-elementos);
+    }
+    .sidebar {
+      width: 220px;
+      background: var(--color-fondo-secundario);
+      border-radius: var(--radio-borde);
+      padding: var(--margen-elementos);
+      box-shadow: var(--sombra-suave);
+      min-height: 600px;
+      font-size: var(--texto-base);
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--margen-elementos);
+    }
+    .card {
+      background: var(--color-fondo-secundario);
+      border: 1px solid var(--color-borde-suave);
+      border-radius: var(--radio-borde);
+      box-shadow: var(--sombra-suave);
+      padding: 16px;
+      margin-bottom: var(--margen-elementos);
+    }
+    .card-title {
+      font-size: var(--titulo-seccion);
+      font-weight: var(--peso-medio);
+      margin-bottom: 8px;
+    }
+    .progress-bar-bg {
+      background: #E6E6E6;
+      border-radius: 3px;
+      height: 6px;
+      width: 100%;
+      margin: 8px 0;
+      overflow: hidden;
+    }
+    .progress-bar {
+      background: var(--color-estado-progreso);
+      height: 100%;
+      border-radius: 3px;
+      width: 60%;
+      transition: width 0.3s;
+    }
+    .boton {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: var(--texto-base);
+      font-weight: var(--peso-medio);
+      cursor: pointer;
+      margin-right: 8px;
+      transition: background 0.2s;
+      text-decoration: none;
+      border: none;
+    }
+    .boton-primario {
+      background: var(--color-primario);
+      color: #fff;
+      border: none;
+    }
+    .boton-primario:hover {
+      background: #357ABD;
+    }
+    .boton-secundario {
+      background: var(--color-fondo-secundario);
+      color: var(--color-texto-principal);
+      border: 1px solid var(--color-borde-suave);
+    }
+    .boton-secundario:hover {
+      background: #ececec;
+    }
+    /* Gráfico de barras simple */
+    .grafico-barras {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      margin-top: 12px;
+      height: 60px;
+    }
+    .barra {
+      border-radius: 6px;
+      width: 24px;
+      margin-right: 4px;
+      display: block;
+    }
+    .barra:nth-child(1) { background: #4A90E2; height: 40px; }
+    .barra:nth-child(2) { background: #F5A623; height: 55px; }
+    .barra:nth-child(3) { background: #7ED321; height: 30px; }
+    .barra:nth-child(4) { background: #D0021B; height: 20px; }
+    /* Calendario mínimo */
+    .calendario {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      font-size: var(--texto-pequeño);
+      margin-top: 12px;
+    }
+    .dia {
+      padding: 8px 0;
+      text-align: center;
+      border-radius: 4px;
+      background: #fff;
+      border: 1px solid var(--color-borde-suave);
+      color: var(--color-texto-secundario);
+    }
+    .dia.activo {
+      background: var(--color-primario);
+      color: #fff;
+      font-weight: var(--peso-medio);
+    }
+    .dia.evento {
+      background: var(--color-secundario);
+      color: #fff;
+      font-weight: var(--peso-medio);
+    }
+    @media (max-width: 800px) {
+      .layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        margin-bottom: var(--margen-elementos);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Bienvenido a Solon</div>
+  <div class="layout">
+    <div class="sidebar">
+      <b>Menú</b>
+      <ul style="list-style:none;padding:0;margin-top:12px;">
+        <li><a href="#" style="text-decoration:none;color:var(--color-texto-principal);display:flex;align-items:center;"><span>🏠</span>&nbsp;Inicio</a></li>
+        <li><a href="#" style="text-decoration:none;color:var(--color-texto-principal);display:flex;align-items:center;"><span>📊</span>&nbsp;Estadísticas</a></li>
+        <li><a href="#" style="text-decoration:none;color:var(--color-texto-principal);display:flex;align-items:center;"><span>🗓️</span>&nbsp;Calendario</a></li>
+      </ul>
+    </div>
+    <div class="main">
+      <!-- Tarjeta de bienvenida -->
+      <div class="card">
+        <div class="card-title">¡Comienza con Solon!</div>
+        <div>Esta es tu dashboard principal. Aquí verás el estado de tus actividades y acceso rápido a las funciones principales.</div>
+        <div style="margin-top:12px;">
+          <button class="boton boton-primario">Nueva tarea</button>
+          <button class="boton boton-secundario">Ver historial</button>
+        </div>
+      </div>
+      <!-- Tarjeta de progreso -->
+      <div class="card">
+        <div class="card-title">Progreso semanal</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar"></div>
+        </div>
+        <span style="font-size:var(--texto-pequeño);color:var(--color-texto-secundario);">60% completado</span>
+      </div>
+      <!-- Tarjeta de gráfico de barras -->
+      <div class="card">
+        <div class="card-title">Resumen de actividad</div>
+        <div class="grafico-barras">
+          <div class="barra"></div>
+          <div class="barra"></div>
+          <div class="barra"></div>
+          <div class="barra"></div>
+        </div>
+        <span style="font-size:var(--texto-pequeño);color:var(--color-texto-secundario);">Tareas por estado</span>
+      </div>
+      <!-- Tarjeta calendario -->
+      <div class="card">
+        <div class="card-title">Calendario</div>
+        <div class="calendario">
+          <div class="dia">L</div>
+          <div class="dia">M</div>
+          <div class="dia">X</div>
+          <div class="dia">J</div>
+          <div class="dia">V</div>
+          <div class="dia">S</div>
+          <div class="dia">D</div>
+          <div class="dia activo">2</div>
+          <div class="dia evento">3</div>
+          <div class="dia">4</div>
+          <div class="dia">5</div>
+          <div class="dia">6</div>
+          <div class="dia">7</div>
+          <div class="dia">8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
