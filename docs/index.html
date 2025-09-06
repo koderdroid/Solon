@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solon - Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primario: #4A90E2;
+      --color-secundario: #F5A623;
+      --color-fondo: #FFFFFF;
+      --color-fondo-sec: #F7F8FA;
+      --color-texto: #333333;
+      --color-texto-sec: #777777;
+      --color-borde: #E0E0E0;
+      --color-progreso: #7ED321;
+    }
+    body { font-family: 'Inter', sans-serif; background-color: var(--color-fondo-sec); margin: 0; padding: 0; color: var(--color-texto); }
+    header { background-color: var(--color-fondo); padding: 16px 24px; border-bottom: 1px solid var(--color-borde); display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-size: 22px; font-weight: 700; color: var(--color-primario);}
+    nav a { color: var(--color-secundario); text-decoration: none; font-weight: 500; margin: 0 8px;}
+    nav a:hover { text-decoration: underline;}
+    main { padding: 24px; display: grid; grid-template-columns: 2fr 1fr; gap: 24px;}
+    .card { background-color: var(--color-fondo); border: 1px solid var(--color-borde); border-radius: 8px; padding: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+    .card h2 { font-size: 18px; font-weight: 500; margin-bottom: 16px; color: var(--color-primario);}
+    .bienvenida { font-size: 17px; color: var(--color-texto-sec); margin-bottom: 12px;}
+    .stats { display: flex; gap: 24px; margin-bottom: 16px;}
+    .stat { background: var(--color-fondo-sec); border-radius: 6px; padding: 12px 18px; text-align: center; flex: 1; border: 1px solid var(--color-borde);}
+    .stat strong { display: block; font-size: 20px; color: var(--color-primario);}
+    .stat span { font-size: 13px; color: var(--color-texto-sec);}
+    ul { padding-left: 18px; margin: 0;}
+    canvas { max-width: 100%;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Solon - Panel Principal</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Mi Panel</a>
+      <a href="#">Configuración</a>
+    </nav>
+  </header>
+  <main>
+    <section class="card">
+      <div class="bienvenida">Bienvenido/a 👋 al dashboard de Solon.</div>
+      <div class="stats">
+        <div class="stat"><strong>12</strong><span>Usuarios activos</span></div>
+        <div class="stat"><strong>5</strong><span>Proyectos</span></div>
+        <div class="stat"><strong>3</strong><span>Tareas pendientes</span></div>
+      </div>
+      <h2>Actividad Reciente</h2>
+      <canvas id="activityChart"></canvas>
+    </section>
+    <section class="card">
+      <h2>Eventos Próximos</h2>
+      <ul>
+        <li>Reunión de equipo - 06 Sep</li>
+        <li>Entrega de módulo - 09 Sep</li>
+        <li>Review de código - 12 Sep</li>
+      </ul>
+      <h2 style="margin-top:24px;">Accesos rápidos</h2>
+      <ul>
+        <li><a href="#">Ver todos los proyectos</a></li>
+        <li><a href="#">Administrar usuarios</a></li>
+        <li><a href="#">Configuración avanzada</a></li>
+      </ul>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('activityChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['01 Sep', '02 Sep', '03 Sep', '04 Sep', '05 Sep'],
+        datasets: [{
+          label: 'Acciones',
+          data: [7, 4, 5, 8, 6],
+          backgroundColor: [
+            'var(--color-primario)',
+            'var(--color-primario)',
+            'var(--color-secundario)',
+            'var(--color-progreso)',
+            'var(--color-primario)'
+          ],
+          borderRadius: 6,
+          barThickness: 30
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, ticks: { color: 'var(--color-texto-sec)' }, grid: { color: 'var(--color-borde)' }},
+          x: { ticks: { color: 'var(--color-texto-sec)' }, grid: { display: false } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
